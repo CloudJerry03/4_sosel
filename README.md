@@ -4,3 +4,9 @@
     - 기본 django 설정
     - 일단해보자
     - Model 생성
+
+- [3주차](http:)
+
+
+- [오류]()
+  - pylint(import-error)# 4_sosel
