@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자소설 닷컴</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <div class="make_jss">
+        <a href="{% url 'create' %}">
+            <div class="plus_btn">
+                +
+            </div>
+        </a>
+        <p>자기소개서 작성</p>
+    </div>
+    <div class="all_jss">
+        <p>자기소개서 제목</p>
+
+        <p>자기소개서 내용</p>
+        
+        <p>날짜</p>
+    </div>
+</body>
+</html>

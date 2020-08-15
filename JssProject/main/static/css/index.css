@@ -1,0 +1,37 @@
+body{
+    margin: 0;
+    padding: 50px;
+}
+a{
+    text-decoration: none;
+}
+.make_jss, .all_jss{
+    width: 200px;
+    height: 300px;
+    border: 1px solid black;
+    display: flex;
+    /* 세로로 나눠 가짐 */
+    flex-direction: column;
+    align-items: center;
+
+    margin-bottom: 30px;
+}
+
+.all_jss{
+    /* 옆으로 정렬되게 함 */
+    display: inline-flex;
+}
+
+.plus_btn{
+    /* p랑 1대 1로 나눠 가짐 */
+    flex: 1;
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+}
+
+p{
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
