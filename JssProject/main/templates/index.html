@@ -16,12 +16,12 @@
         </a>
         <p>자기소개서 작성</p>
     </div>
+    {% for jss in all_jss %}
     <div class="all_jss">
-        <p>자기소개서 제목</p>
-
-        <p>자기소개서 내용</p>
-        
-        <p>날짜</p>
+        <p>{{ jss.title }}</p>
+        <p>{{ jss.content }}</p>
+        <p>{{ jss.updated_at }}</p>
     </div>
+    {% endfor %}
 </body>
 </html>
