@@ -10,11 +10,13 @@ a{
     height: 300px;
     border: 1px solid black;
     display: flex;
+    
     /* 세로로 나눠 가짐 */
     flex-direction: column;
     align-items: center;
 
     margin-bottom: 30px;
+    margin-top: 30px;
 }
 
 .all_jss{
