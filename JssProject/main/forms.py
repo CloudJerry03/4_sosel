@@ -1,11 +1,11 @@
 from django import forms
-from .models import Jasoseol
+from .models import Jasoseol, Comment
 
 class JssForm(forms.ModelForm):
     class Meta:
         model = Jasoseol
         # 만들고 싶은 field
-        fields = ('title', 'content',)
+        fields = ('title', 'content', )
     def __init__(self,*args, **kwargs):
         super().__init__(*args, **kwargs)
         
@@ -21,3 +21,9 @@ class JssForm(forms.ModelForm):
             'class':'jss_content',#input의 class 설정
             'placeholder':'자유롭게 자기소개서를 입력해주세요',
         })
+
+class CommentForm(forms.ModelForm):
+
+    class Meta:
+        model = Comment
+        fields = ('content',)

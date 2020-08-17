@@ -28,6 +28,20 @@
   - Logout : 로그아웃
   - login, logout 커스텀
   - django에서 제공하는 Class를 커스텀
+  
+- [7주차]()
+  - Foreign Key
+  - 작성자는 자동으로!
+  - 자신의 것만 수정/삭제
+    - Logout시 작성 안됨
+  - 목록 정렬 방식(내 것만 보기, 모두 보기)
+
+- [8주차]()
+  - Comment Model 생성
+  - CommentForm 생성
+  - Create Comment
+  - Comment 불러오기
+  - Delete Comment
 
 - [오류]()
   - pylint(import-error)# 4_sosel
