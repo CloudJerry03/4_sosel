@@ -18,7 +18,7 @@ class JssForm(forms.ModelForm):
             'placeholder':'제목',
         })
         self.fields['content'].widget.attrs.update({
-            'class':'jss_content',#input의 class 설정
+            'class':'jss_content_form',#input의 class 설정
             'placeholder':'자유롭게 자기소개서를 입력해주세요',
         })
 
