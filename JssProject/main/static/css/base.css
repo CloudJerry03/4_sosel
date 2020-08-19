@@ -1,0 +1,56 @@
+/* a태그 속성 없애기 */
+a{  
+    text-decoration: none;
+}
+
+html, body{
+    margin: 0;
+    padding:0;
+}
+/* 내용에만 padding을 줌 */
+main{
+    padding:3rem;
+    float: center;
+}
+
+/* navbar */
+#navbar{
+    background-color:#63A6CC;
+
+    display: flex;
+    justify-content: space-between;
+}
+/* navbar_제목 */
+.title_label{
+    /* margin */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 10px;
+
+    /* 정렬 */
+    display: flex;
+
+    font-family: 'Lucida Sans';
+    color: white;
+    font-size: 25px;
+}
+/* navbar_로그인부분 */
+#login{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    margin-right: 10px;
+
+    display : flex;
+    text-align: right;
+
+    color: white;
+}
+
+#login button{
+    border-radius:  5px;
+    border-color: black;
+    border: none;
+
+    background-color: white;
+}
+

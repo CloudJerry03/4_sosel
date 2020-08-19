@@ -1,0 +1,30 @@
+
+label{
+    color: black;
+    font-size: 15px;
+}
+form{
+    border-radius: 10px;
+    border: solid #63A6CC;
+}
+form p{
+    display: flex;
+    flex-direction: column;
+
+    margin: 10px;
+}
+.submit{
+    border-radius:  5px;
+    border: none;
+
+    color: white;
+    background-color: #63A6CC;
+
+    font-size: 15px;
+
+    float: right;
+    margin: 5px;
+}
+.counted_content{
+    display: flex;
+}

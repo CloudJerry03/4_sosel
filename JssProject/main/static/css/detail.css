@@ -1,0 +1,48 @@
+.jss{
+    border-radius: 10px;
+    border: solid #63A6CC;
+    margin-bottom: 10px;
+}
+.jss_content{
+    margin: 10px;
+}
+.number{   
+    font-size: 15px;
+    color: #63A6CC;
+}
+.title{
+    text-align: center;
+    font-size: 20px;
+    
+    border-bottom: solid 2px #63A6CC;
+    margin-bottom: 10px;
+}
+.author{
+    font-size: 15px;
+    margin-bottom: 10px;
+
+    text-align: right;
+}
+.content{
+    font-size: 18px;
+
+    border-bottom: solid 1px #63A6CC;
+}
+.date{
+    text-align: right;
+    margin-bottom: 10px;
+}
+.comment_here{
+    border-bottom: solid #63A6CC;
+}
+.comment_some{
+    margin: 10px;
+}
+.some{
+    border-radius:  5px;
+    border: none;
+
+    color: white;
+    
+    background-color: #63A6CC;
+}

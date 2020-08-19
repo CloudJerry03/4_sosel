@@ -1,61 +1,39 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>자소설 닷컴</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
-</head>
+{% block title %}JSS{% endblock %}
+{% block link %}{% static 'css/index.css' %}{% endblock %}
 
-<body>
-    <!-- 로그인이 된 경우 -->
-    {% if user.is_authenticated %}
-    <a href="{% url 'logout' %}">
-        <button>로그아웃</button>
-    </a>
-    안녕하세요! {{ user }}님!
-    <!-- 로그인이 되지 않은 경우 -->
-    {% else %}
-    <a href="{% url 'signup' %}">
-        <button>회원가입</button>
-    </a>
+{% block content %}
 
-    <a href="{% url 'login' %}">
-        <button>로그인</button>
-    </a>
-    {% endif %}
-   
-    <div class="make_jss">
-        <a href="{% url 'create' %}">
-            <div class="plus_btn">
-                +
-            </div>
-        </a>
-        <p>자기소개서 작성</p>
-    </div>
-
-    {% if user.is_authenticated %}
-    <a href="{% url 'my_index' %}">
-        <button>내 자기소개서 보기</button>
-    </a>
-    <a href="{% url 'index' %}">
-        <button>모든 자기소개서 보기</button>
-    </a>
-    <br>
-    {% endif %}
-
-    {% for jss in all_jss %}
-    <a href="{% url 'detail' jss.id %}">
-        <div class="all_jss">
-            <p>{{ jss.author }}</p>
-            <p>{{ jss.title }}</p>
-            <p>{{ jss.content }}</p>
-            <p>{{ jss.updated_at|date:"Y-m-d"}}</p>
+<div class="create_jss">
+    <a href="{% url 'create' %}">
+        <div class="plus_btn">
+            +
         </div>
     </a>
-    {% endfor %}
-</body>
+    <p>자기소개서 작성</p>
+</div>
+<br>
+<!-- 보는 부분 -->
+{% if user.is_authenticated %}
+<a href="{% url 'my_index' %}">
+    <button id="list_btn">내 자기소개서 보기</button>
+</a>
+<a href="{% url 'index' %}">
+    <button id="list_btn">모든 자기소개서 보기</button>
+</a>
+<br>
+{% endif %}
 
-</html>
+{% for jss in all_jss %}
+<a href="{% url 'detail' jss.id %}">
+    <div class="all_jss">
+        <p>{{ jss.author }}</p>
+        <p>{{ jss.title }}</p>
+        <p>{{ jss.content }}</p>
+        <p>{{ jss.updated_at|date:"Y-m-d"}}</p>
+    </div>
+</a>
+{% endfor %}
+{% endblock %}

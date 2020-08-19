@@ -1,22 +1,37 @@
-{{my_jss.id}}번째 글입니다
-<br>
-제목 : {{my_jss.title}}
-<br>
-내용 : {{my_jss.content}}
-<br>
-생성시간 : {{my_jss.updated_at|date:"Y-m-d"}}
-<br>
-{% if user == my_jss.author %}
-<a href="{% url 'update' my_jss.id %}"><button>수정</button></a>
-<a href="{% url 'delete' my_jss.id %}"><button>삭제</button></a>
-{% endif %}
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}JSS{% endblock %}
+{% block link %}{% static 'css/detail.css' %}{% endblock %}
+
+{% block content %}
+<div class="jss">
+    <div class="jss_content">
+        <div class="number">{{my_jss.id}}번 글</div>
+
+        <div class="title">{{my_jss.title}}</div>
+
+        <div class="author">작성자 | {{my_jss.author}}</div>
+
+        <div class="content">{{my_jss.content}}</div>
+
+        <div class="date">{{my_jss.updated_at|date:"Y-m-d"}}</div>
+
+        {% if user == my_jss.author %}
+        <a href="{% url 'update' my_jss.id %}"><button class="some">수정</button></a>
+        <a href="{% url 'delete' my_jss.id %}"><button class="some">삭제</button></a>
+        {% endif %}
+    </div>
+</div>
 
 <!-- 댓글폼 -->
 {% if user.is_authenticated %}
-<form method="POST" action="{% url 'create_comment' my_jss.id %}">
+<form class="comment_here" method="POST" action="{% url 'create_comment' my_jss.id %}">
     {% csrf_token %}
-    {{ comment_form }}
-    <input type="submit" value="확인">
+    <div class="comment_some">
+        {{ comment_form }}
+        <input class="some" type="submit" value="확인">
+    </div>
 </form>
 {% endif %}
 
@@ -25,8 +40,9 @@
 <P>{{ comment.author }} | {{ comment.content }}
     {% if user == comment.author %}
     <a href="{% url 'delete_comment' my_jss.id comment.id %}">
-        <button>삭제</button>
+        <button class="some">삭제</button>
     </a>
     {% endif %}
 </p>
 {% endfor %}
+{% endblock %}

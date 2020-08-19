@@ -1,0 +1,54 @@
+{% load static %}
+
+<!doctype html>
+<html lang="ko-kr">
+
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+
+    <!-- CSS Static -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% block link %} {% endblock %}">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <!-- 상단 navbar -->
+        <div id="navbar">
+            <a id="logo" href="{% url 'index' %}">
+                <div class="title_label">JSS_자소설사이트</div>
+            </a>
+            <div id="login" class="collapse navbar-collapse">
+                <div class="navbar-nav">
+                    <!-- 로그인이 된 경우 -->
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}">
+                        <button>로그아웃</button>
+                    </a>
+                    안녕하세요! {{ user }}님!
+                    <!-- 로그인이 되지 않은 경우 -->
+                    {% else %}
+                    <a href="{% url 'signup' %}">
+                        <button>회원가입</button>
+                    </a>
+
+                    <a href="{% url 'login' %}">
+                        <button>로그인</button>
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main role="main">
+        {% block content %}
+
+        {% endblock %}
+    </main>
+</body>
+
+</html>

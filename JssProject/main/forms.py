@@ -15,11 +15,11 @@ class JssForm(forms.ModelForm):
         #class, placeholder바꾸기
         self.fields['title'].widget.attrs.update({
             'class':'jss_title',#input의 class 설정
-            'placeholder':'제목',
+            'placeholder':'제목을 입력하세요',
         })
         self.fields['content'].widget.attrs.update({
             'class':'jss_content_form',#input의 class 설정
-            'placeholder':'자유롭게 자기소개서를 입력해주세요',
+            'placeholder':'자기소개서를 자유롭게 입력해주세요',
         })
 
 class CommentForm(forms.ModelForm):
